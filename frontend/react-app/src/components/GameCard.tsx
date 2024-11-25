@@ -6,20 +6,18 @@ import getCroppedImageUrl from "@/services/image-url";
 
 const GameCard = ({ game }: { game: Game }) => {
   return (
-    <>
-      <Card.Root overflow={"hidden"}>
-        <Image src={getCroppedImageUrl(game.background_image)}></Image>
-        <Card.Body>
-          <Card.Title>{game.name}</Card.Title>
-          <HStack justifyContent={"space-between"}>
-            <PlatformIconList
-              platforms={game.parent_platforms.map((p) => p.platform)}
-            ></PlatformIconList>
-            <CriticScore score={game.metacritic}></CriticScore>
-          </HStack>
-        </Card.Body>
-      </Card.Root>
-    </>
+    <Card.Root>
+      <Image src={getCroppedImageUrl(game.background_image)}></Image>
+      <Card.Body>
+        <Card.Title>{game.name}</Card.Title>
+        <HStack justifyContent={"space-between"}>
+          <PlatformIconList
+            platforms={game.parent_platforms.map((p) => p.platform)}
+          ></PlatformIconList>
+          <CriticScore score={game.metacritic}></CriticScore>
+        </HStack>
+      </Card.Body>
+    </Card.Root>
   );
 };
 

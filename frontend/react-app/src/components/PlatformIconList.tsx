@@ -9,7 +9,7 @@ import {
   FaAndroid,
 } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
-import { SiNintendo } from "react-icons/si";
+import { SiNintendo, SiSega } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { IconType } from "react-icons";
 
@@ -25,6 +25,7 @@ const PlatformIconList = ({ platforms }: { platforms: Platform[] }) => {
     android: FaAndroid,
     web: BsGlobe,
     ios: FaApple,
+    sega: SiSega,
   };
 
   return (

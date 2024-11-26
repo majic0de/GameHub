@@ -1,5 +1,5 @@
 import { Platform } from "@/hooks/usePlatforms";
-import { HStack, Icon } from "@chakra-ui/react";
+import { HStack, Icon, Text } from "@chakra-ui/react";
 import {
   FaXbox,
   FaPlaystation,
@@ -34,7 +34,11 @@ const PlatformIconList = ({ platforms }: { platforms: Platform[] }) => {
         const IconComponent = iconMap[platform.slug];
         return (
           <Icon key={platform.id} color="gray.500">
-            <IconComponent />
+            {IconComponent ? (
+              <IconComponent />
+            ) : (
+              <Text>{platform.name[0]}</Text>
+            )}
           </Icon>
         );
       })}

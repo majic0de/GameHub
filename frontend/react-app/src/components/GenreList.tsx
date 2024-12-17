@@ -1,7 +1,6 @@
 import useGenres, { Genre } from "@/hooks/useGenres";
 import getCroppedImageUrl from "@/services/image-url";
 import {
-  Box,
   Button,
   Heading,
   HStack,
@@ -36,8 +35,10 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                 fontWeight={genre.id == selectedGenre?.id ? "bold" : "normal"}
                 onClick={() => onSelectGenre(genre)}
                 whiteSpace={"normal"}
-                alignContent={"left"}
+                textAlign="left"
+                alignContent="left"
                 variant={"plain"}
+                paddingX={1}
               >
                 {genre.name}
               </Button>

@@ -19,7 +19,7 @@ const SearchInput = ({ onSearch }: Props) => {
           if (ref.current) onSearch(ref.current.value);
         }}
       >
-        <InputGroup startElement={<BsSearch />}>
+        <InputGroup startElement={<BsSearch />} width={"100%"}>
           <Input
             placeholder="Search games..."
             borderRadius={20}

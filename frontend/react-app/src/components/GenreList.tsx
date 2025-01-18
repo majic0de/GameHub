@@ -39,6 +39,8 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                 alignContent="left"
                 variant={"plain"}
                 paddingX={1}
+                flex={1}
+                justifyContent="flex-start"
               >
                 {genre.name}
               </Button>

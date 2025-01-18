@@ -9,6 +9,7 @@ import { Platform } from "./hooks/usePlatforms";
 import SortSelector, { SortOrder } from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
 
+// Define the structure of the game query state
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
@@ -17,26 +18,30 @@ export interface GameQuery {
 }
 
 function App() {
+  // Initialize the game query state
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
   return (
     <Grid
+      // Define the grid layout for different screen sizes
       templateAreas={{
-        base: `"nav" "main"`,
-        lg: `"nav nav" "aside main"`,
+        base: `"nav" "main"`, // Layout for small screens
+        lg: `"nav nav" "aside main"`, // Layout for large screens
       }}
       templateColumns={{
-        base: "1fr",
-        lg: "200px 1fr",
+        base: "1fr", // Single column layout for small screens
+        lg: "200px 1fr", // Two-column layout for large screens
       }}
     >
       <GridItem area={"nav"}>
         <NavBar
+          // Update the game query state with the search text
           onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
         />
       </GridItem>
       <GridItem area={"aside"} hideBelow="lg" paddingX={5}>
         <GenreList
+          // Pass the selected genre and handler to update the game query state
           selectedGenre={gameQuery.genre}
           onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
         />
@@ -48,6 +53,7 @@ function App() {
             <Flex>
               <Box marginRight={1}>
                 <PlatformSelector
+                  // Pass the selected platform and handler to update the game query state
                   onSelectPlatform={(platform) =>
                     setGameQuery({ ...gameQuery, platform })
                   }
@@ -56,6 +62,7 @@ function App() {
               </Box>
               <Box>
                 <SortSelector
+                  // Pass the selected sort order and handler to update the game query state
                   onSelectSortOrder={(sortOrder) =>
                     setGameQuery({ ...gameQuery, sortOrder })
                   }

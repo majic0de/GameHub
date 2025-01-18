@@ -1,10 +1,10 @@
+import { Button } from "@chakra-ui/react";
 import {
-  Button,
   MenuContent,
   MenuItem,
   MenuRoot,
   MenuTrigger,
-} from "@chakra-ui/react";
+} from "@/components/ui/menu";
 import { BsChevronDown } from "react-icons/bs";
 
 export interface SortOrder {
